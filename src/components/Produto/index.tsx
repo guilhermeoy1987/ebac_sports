@@ -1,11 +1,12 @@
-import { Produto as ProdutoType } from '../../App'
+import { useDispatch } from 'react-redux' // REQUISITO: useDispatch
+import { adicionar } from '../../store/reducers/carrinho' // Ação que você criou
+import { Produto as ProdutoType } from '../../services/api' // Importe o tipo da API
 import * as S from './styles'
 
+// Agora o componente recebe apenas o produto.
+// As funções de ação são internas via Redux.
 type Props = {
   produto: ProdutoType
-  aoComprar: (produto: ProdutoType) => void
-  favoritar: (produto: ProdutoType) => void
-  estaNosFavoritos: boolean
 }
 
 export const paraReal = (valor: number) =>
@@ -13,12 +14,9 @@ export const paraReal = (valor: number) =>
     valor
   )
 
-const ProdutoComponent = ({
-  produto,
-  aoComprar,
-  favoritar,
-  estaNosFavoritos
-}: Props) => {
+const ProdutoComponent = ({ produto }: Props) => {
+  const dispatch = useDispatch() // Inicializa o disparador de ações
+
   return (
     <S.Produto>
       <S.Capa>
@@ -28,12 +26,13 @@ const ProdutoComponent = ({
       <S.Prices>
         <strong>{paraReal(produto.preco)}</strong>
       </S.Prices>
-      <S.BtnComprar onClick={() => favoritar(produto)} type="button">
-        {estaNosFavoritos
-          ? '- Remover dos favoritos'
-          : '+ Adicionar aos favoritos'}
-      </S.BtnComprar>
-      <S.BtnComprar onClick={() => aoComprar(produto)} type="button">
+
+      {/* Botão de Favoritar (Se você não criou um slice de favoritos,
+          pode manter apenas o layout ou criar um slice similar ao do carrinho) */}
+      <S.BtnComprar type="button">+ Adicionar aos favoritos</S.BtnComprar>
+
+      {/* Botão de Adicionar ao Carrinho usando Redux */}
+      <S.BtnComprar onClick={() => dispatch(adicionar(produto))} type="button">
         Adicionar ao carrinho
       </S.BtnComprar>
     </S.Produto>
