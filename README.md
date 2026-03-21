@@ -43,7 +43,7 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/). 
+To learn React, check out the [React documentation](https://reactjs.org/).
 EBAC Sports - E-commerce com React & Redux
 Neste projeto, desenvolvi uma aplicação de e-commerce funcional utilizando React e Redux Toolkit. O objetivo principal foi aplicar conceitos avançados de gerenciamento de estado e requisições assíncronas, garantindo uma arquitetura limpa e independente.
 
@@ -69,3 +69,26 @@ Provider: Isolei o Provider do Redux no ponto de entrada da aplicação (index.t
 
 3. Hooks Customizados
 Utilizei os hooks useSelector e useDispatch para conectar os componentes ao estado global, além do hook gerado automaticamente pelo RTK Query (useGetProdutosQuery) para a listagem dinâmica dos produtos.
+
+EBAC Sports - E-commerce com React & Redux
+Neste projeto, desenvolvi uma aplicação de e-commerce funcional focada em demonstrar o domínio do gerenciamento de estado global e o consumo eficiente de APIs modernas.
+
+🛠️ O que eu implementei:
+Redux Toolkit & RTK Query: Migrei a lógica de estados locais para uma arquitetura global e robusta. Utilizei o RTK Query para gerenciar as requisições, aproveitando o cache automático e eliminando a necessidade de useEffect para carregar dados.
+
+API Independente: Configurei o serviço para consumir dados de uma API externa personalizada (fake-api-tau.vercel.app), garantindo que o projeto funcione de forma autônoma e profissional.
+
+Tipagem com TypeScript: Refatorei todos os componentes e serviços utilizando interfaces e tipos centralizados, garantindo um código livre de erros e fácil de manter.
+
+Carrinho de Compras Global: Implementei um Slice de Redux para o carrinho, permitindo que a ação de adicionar produtos reflita instantaneamente no Header e em outros componentes da aplicação.
+
+🚀 Tecnologias:
+React (com Hooks e Functional Components)
+
+Redux Toolkit (Slices e Store)
+
+RTK Query (API Services)
+
+TypeScript
+
+Styled Components
