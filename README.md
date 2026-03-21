@@ -43,4 +43,29 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+To learn React, check out the [React documentation](https://reactjs.org/). 
+EBAC Sports - E-commerce com React & Redux
+Neste projeto, desenvolvi uma aplicação de e-commerce funcional utilizando React e Redux Toolkit. O objetivo principal foi aplicar conceitos avançados de gerenciamento de estado e requisições assíncronas, garantindo uma arquitetura limpa e independente.
+
+🚀 Tecnologias e Ferramentas Utilizadas
+React com TypeScript: Para garantir tipagem forte e evitar erros em tempo de execução.
+
+Redux Toolkit: Utilizado para gerenciar o estado global do carrinho de compras.
+
+RTK Query: Implementado para realizar o consumo da API de produtos, aproveitando o cache e o gerenciamento automático de estados de loading.
+
+Styled Components: Para a estilização dos componentes.
+
+🛠️ Minhas Implementações Técnicas
+1. Independência da API
+Diferente da abordagem padrão, configurei o RTK Query para consumir uma API externa atualizada (fake-api-tau.vercel.app), mapeando corretamente os campos de dados como titulo, plataformas e precoAntigo. Centralizei a tipagem do Produto diretamente no serviço de API para facilitar a manutenção.
+
+2. Gerenciamento de Estado (Redux)
+Store Centralizada: Configurei a Store no arquivo src/store/index.ts, integrando os reducers do carrinho e os middlewares da API.
+
+Slice do Carrinho: Desenvolvi a lógica de adicionar itens ao carrinho evitando duplicatas, utilizando o createSlice.
+
+Provider: Isolei o Provider do Redux no ponto de entrada da aplicação (index.tsx), mantendo o componente App.tsx focado apenas na estrutura e layout.
+
+3. Hooks Customizados
+Utilizei os hooks useSelector e useDispatch para conectar os componentes ao estado global, além do hook gerado automaticamente pelo RTK Query (useGetProdutosQuery) para a listagem dinâmica dos produtos.
