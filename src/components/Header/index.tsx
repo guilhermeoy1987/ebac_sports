@@ -2,8 +2,8 @@ import { useSelector } from 'react-redux'
 import { RootReducer } from '../../store'
 import { paraReal } from '../Produto'
 
-// MUDANÇA: Importe do arquivo de tipos centralizado
-import { Produto } from '../../types'
+// ✅ ATUALIZADO A FONTE para o tipo Produto
+import { Produto } from '../../services/api'
 
 import * as S from './styles'
 import cesta from '../../assets/cesta.png'
